@@ -683,6 +683,14 @@ export default function Home() {
           </div>
           <div className="mt-12 border-t border-gray-800 pt-8 text-center">
             <p className="text-sm text-gray-400">© {currentYear} Teikio. </p>
+            <div className="mt-3 flex items-center justify-center gap-6 text-sm text-gray-500">
+              <a href="/" className="hover:text-gray-300 transition-colors">
+                Inicio
+              </a>
+              <a href="/privacy" className="hover:text-gray-300 transition-colors">
+                Política de Privacidad
+              </a>
+            </div>
           </div>
         </div>
       </footer>
