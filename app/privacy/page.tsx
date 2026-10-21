@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { SiteFooter } from "@/components/landing/site-footer";
+import { SiteHeader } from "@/components/landing/site-header";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad | Teikio",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_EC",
+    locale: "es_LA",
     url: "https://teikio.com/privacy",
     siteName: "Teikio",
     title: "Política de Privacidad | Teikio",
@@ -24,39 +25,26 @@ export default function Privacidad() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navbar */}
-      <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/teikio-logo.svg"
-              alt="Teikio Logo"
-              width={40}
-              height={40}
-              className="h-10 w-10"
-            />
-            <span className="text-xl font-bold text-gray-900">Teikio</span>
-          </Link>
-          <Link
-            href="/"
-            className="text-sm font-medium text-gray-600 hover:text-gray-900"
-          >
-            Volver al inicio
-          </Link>
-        </div>
-      </nav>
+    <div className="min-h-screen">
+      <SiteHeader>
+        <Link
+          href="/"
+          className="text-sm text-on-surface-variant hover:text-foreground"
+        >
+          Volver al inicio
+        </Link>
+      </SiteHeader>
 
       {/* Content */}
-      <main className="mx-auto max-w-3xl px-6 pt-32 pb-20">
-        <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+      <main className="mx-auto max-w-3xl px-6 pt-12 pb-20 sm:pt-16">
+        <h1 className="text-3xl font-semibold sm:text-4xl">
           Política de Privacidad — Teikio
         </h1>
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-2 text-sm text-muted-text">
           Última actualización: {currentYear}
         </p>
 
-        <div className="mt-10 space-y-10 text-gray-700">
+        <div className="mt-10 space-y-10 font-normal text-on-surface-variant">
           <p className="text-lg leading-relaxed">
             Teikio es una plataforma de gestión para restaurantes desarrollada
             por Intenli. Esta Política de Privacidad explica cómo recopilamos,
@@ -65,7 +53,7 @@ export default function Privacidad() {
           </p>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               1. Información que recopilamos
             </h2>
             <p className="mt-3">
@@ -86,7 +74,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               2. Cómo utilizamos la información
             </h2>
             <p className="mt-3">Utilizamos esta información para:</p>
@@ -108,7 +96,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               3. Pagos y suscripciones
             </h2>
             <p className="mt-3">
@@ -122,7 +110,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               4. Notificaciones
             </h2>
             <p className="mt-3">
@@ -137,7 +125,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               5. Cómo compartimos la información
             </h2>
             <p className="mt-3">
@@ -157,7 +145,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">6. Seguridad</h2>
+            <h2 className="text-xl font-semibold text-foreground">6. Seguridad</h2>
             <p className="mt-3">
               Implementamos medidas técnicas y organizativas razonables para
               proteger la información contra acceso, modificación, divulgación
@@ -170,7 +158,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               7. Retención de datos
             </h2>
             <p className="mt-3">
@@ -185,7 +173,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               8. Eliminación de la cuenta
             </h2>
             <p className="mt-3">
@@ -198,7 +186,7 @@ export default function Privacidad() {
                 Email:{" "}
                 <a
                   href="mailto:support@teikio.com"
-                  className="text-primary underline hover:text-primary/80"
+                  className="text-primary underline underline-offset-4 hover:opacity-80"
                 >
                   support@teikio.com
                 </a>
@@ -207,7 +195,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               9. Privacidad de menores
             </h2>
             <p className="mt-3">
@@ -220,7 +208,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-foreground">
               10. Cambios a esta Política de Privacidad
             </h2>
             <p className="mt-3">
@@ -231,7 +219,7 @@ export default function Privacidad() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900">11. Contacto</h2>
+            <h2 className="text-xl font-semibold text-foreground">11. Contacto</h2>
             <p className="mt-3">
               Si tienes preguntas sobre esta Política de Privacidad o sobre el
               tratamiento de tus datos, puedes contactarnos en:
@@ -242,7 +230,7 @@ export default function Privacidad() {
                 Email:{" "}
                 <a
                   href="mailto:support@teikio.com"
-                  className="text-primary underline hover:text-primary/80"
+                  className="text-primary underline underline-offset-4 hover:opacity-80"
                 >
                   support@teikio.com
                 </a>
@@ -253,7 +241,7 @@ export default function Privacidad() {
                   href="https://teikio.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary underline hover:text-primary/80"
+                  className="text-primary underline underline-offset-4 hover:opacity-80"
                 >
                   https://teikio.com
                 </a>
@@ -263,28 +251,7 @@ export default function Privacidad() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 bg-gray-50 px-6 py-8">
-        <div className="mx-auto max-w-7xl text-center">
-          <p className="text-sm text-gray-500">
-            © {currentYear} Teikio. Todos los derechos reservados.
-          </p>
-          <div className="mt-2 flex items-center justify-center gap-4 text-sm">
-            <Link
-              href="/"
-              className="text-gray-500 hover:text-gray-900"
-            >
-              Inicio
-            </Link>
-            <Link
-              href="/privacy"
-              className="text-gray-500 hover:text-gray-900"
-            >
-              Política de Privacidad
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

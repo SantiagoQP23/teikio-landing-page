@@ -1,12 +1,24 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
+
+// Sets data-theme before the first paint: the visitor's saved choice
+// (see ThemeToggle), otherwise their system setting, which it keeps following.
+const themeScript = `(function(){var d=document.documentElement,m=matchMedia("(prefers-color-scheme: dark)");function s(){try{return localStorage.getItem("theme")}catch(e){return null}}function a(){var t=s();d.dataset.theme=t==="light"||t==="paper"||t==="dark"?t:m.matches?"dark":"light"}a();m.addEventListener("change",function(){if(!s())a()})})();`;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#141311" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Teikio - Pedidos claros, cocina organizada",
@@ -17,7 +29,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_EC",
+    locale: "es_LA",
     url: "https://teikio.com",
     siteName: "Teikio",
     title: "Teikio - Pedidos claros, cocina organizada",
@@ -44,9 +56,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
-        className={`${inter.variable} font-sans antialiased`}
+        className={`${jakarta.variable} font-sans antialiased`}
       >
         {children}
       </body>
