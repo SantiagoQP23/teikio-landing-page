@@ -20,7 +20,7 @@ export function Hero() {
           </h1>
           <p className="mt-5 max-w-[30em] text-lg font-normal text-on-surface-variant sm:text-[19px]">
             Meseros, cocina y caja en una sola app, desde el celular. Hecha para
-            restaurantes pequeños y medianos en Ecuador.
+            restaurantes pequeños y medianos.
           </p>
           <CtaButtons className="mt-8 flex flex-wrap gap-3" />
           <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm text-on-surface-variant">

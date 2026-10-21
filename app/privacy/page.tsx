@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_EC",
+    locale: "es_LA",
     url: "https://teikio.com/privacy",
     siteName: "Teikio",
     title: "Política de Privacidad | Teikio",

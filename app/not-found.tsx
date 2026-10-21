@@ -79,7 +79,7 @@ export default function NotFound() {
             alt="Teikio Logo"
             width={32}
             height={32}
-            className="h-8 w-8 rounded-md dark:invert"
+            className="h-8 w-8 rounded-md [filter:var(--logo-filter)]"
           />
           <span className="text-lg font-bold">Teikio</span>
         </div>

@@ -3,9 +3,10 @@
 
 /*
  * Color roles from the mobile app (fast-serve-app constants/theme.ts):
- * "paper and ink". Light by default, Dark when the visitor's system is
- * in dark mode. Components use the roles (`bg-surface`, `text-primary`),
- * never fixed colors, so both themes keep working.
+ * "paper and ink". The theme is set as `data-theme` on <html> by the script
+ * in app/layout.tsx: the visitor's choice, or their system setting.
+ * Components use the roles (`bg-surface`, `text-primary`), never fixed
+ * colors, so every theme keeps working.
  */
 @theme inline {
   --font-sans: var(--font-jakarta), system-ui, sans-serif;
@@ -58,36 +59,58 @@
   --success-container: #d1fae5;
   --on-success-container: #065f46;
 
+  --logo-filter: none;
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #141311;
-    --foreground: #ede8df;
-    --surface: #1e1c19;
-    --surface-high: #262420;
-    --surface-container-low: #181715;
-    --surface-bright: #2e2b27;
+:root[data-theme="paper"] {
+  --background: #f4efe6;
+  --foreground: #24211d;
+  --surface: #eae4d8;
+  --surface-high: #e3dcce;
+  --surface-container-low: #f0eadf;
+  --surface-bright: #fbf8f2;
 
-    --primary: #ede8df;
-    --on-primary: #141311;
-    --primary-container: #34312c;
-    --on-primary-container: #ede8df;
-    --secondary: #1f2a38;
-    --on-secondary: #dce4ee;
+  --primary: #24211d;
+  --on-primary: #fbf8f2;
+  --primary-container: #e3dcce;
+  --on-primary-container: #24211d;
+  --secondary: #8fafc4;
+  --on-secondary: #24211d;
 
-    --on-surface-variant: #c9c3b8;
-    --muted-text: #948d82;
-    --icon: #948d82;
-    --border: #34312c;
-    --divider: #221f1c;
+  --on-surface-variant: #4a453d;
+  --muted-text: #78716c;
+  --icon: #7a7266;
+  --border: #d6cebf;
+  --divider: #ebe4d7;
+}
 
-    --success-container: #064e3b;
-    --on-success-container: #a7f3d0;
+:root[data-theme="dark"] {
+  --background: #141311;
+  --foreground: #ede8df;
+  --surface: #1e1c19;
+  --surface-high: #262420;
+  --surface-container-low: #181715;
+  --surface-bright: #2e2b27;
 
-    color-scheme: dark;
-  }
+  --primary: #ede8df;
+  --on-primary: #141311;
+  --primary-container: #34312c;
+  --on-primary-container: #ede8df;
+  --secondary: #1f2a38;
+  --on-secondary: #dce4ee;
+
+  --on-surface-variant: #c9c3b8;
+  --muted-text: #948d82;
+  --icon: #948d82;
+  --border: #34312c;
+  --divider: #221f1c;
+
+  --success-container: #064e3b;
+  --on-success-container: #a7f3d0;
+
+  --logo-filter: invert(1);
+  color-scheme: dark;
 }
 
 @layer base {

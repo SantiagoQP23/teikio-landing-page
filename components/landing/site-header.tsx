@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader({ children }: { children?: React.ReactNode }) {
   return (
@@ -11,11 +12,14 @@ export function SiteHeader({ children }: { children?: React.ReactNode }) {
             alt="Teikio Logo"
             width={32}
             height={32}
-            className="h-8 w-8 rounded-md dark:invert"
+            className="h-8 w-8 rounded-md [filter:var(--logo-filter)]"
           />
           <span className="text-lg font-bold">Teikio</span>
         </Link>
-        <div className="flex items-center gap-6">{children}</div>
+        <div className="flex items-center gap-3 sm:gap-6">
+          <ThemeToggle />
+          {children}
+        </div>
       </div>
     </nav>
   );
