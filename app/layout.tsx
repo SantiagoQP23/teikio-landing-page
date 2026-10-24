@@ -40,14 +40,6 @@ export const metadata: Metadata = {
     title: "Teikio - Pedidos claros, cocina organizada",
     description: "Termina con los errores en los pedidos, la confusión en cocina y el estrés de las horas pico. Lleva tu restaurante con orden y tranquilidad.",
   },
-  icons: {
-    icon: [
-      { url: "/teikio-logo.svg", type: "image/svg+xml" },
-    ],
-    apple: [
-      { url: "/teikio-logo.svg", type: "image/svg+xml" }
-    ]
-  }
 };
 
 export default function RootLayout({

@@ -12,7 +12,7 @@ export function SiteHeader({ children }: { children?: React.ReactNode }) {
             alt="Teikio Logo"
             width={32}
             height={32}
-            className="h-8 w-8 rounded-md [filter:var(--logo-filter)]"
+            className="h-8 w-8"
           />
           <span className="text-lg font-bold">Teikio</span>
         </Link>
